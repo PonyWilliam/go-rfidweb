@@ -2,7 +2,6 @@ package main
 
 import (
 "encoding/hex"
-"fmt"
 "github.com/PonyWilliam/go-arcsoft/RfidUtils"
 "github.com/gin-gonic/gin"
 "net/http"
@@ -14,7 +13,6 @@ func main(){
 		//返回rfid信息
 		Rfid := RfidUtils.GetNearRfid()
 		if Rfid!=nil{
-			fmt.Println(hex.EncodeToString(Rfid[0]))
 			context.JSON(200,gin.H{
 				"code":200,
 				"data":hex.EncodeToString(Rfid[0]),
